@@ -69,7 +69,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 install php, mysql, composer
 
 commands: 
-<strong>cp .env.example .env</strong>,
-<strong>php artisan key:generate</strong>,
-<strong>composer du</strong>, 
+<strong>cp .env.example .env</strong>, \n
+<strong>php artisan key:generate</strong>, \n
+<strong>composer du</strong>, \n
 <strong>php artisan migrate(before make sure if you have database)</strong>
