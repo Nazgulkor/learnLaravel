@@ -19,4 +19,9 @@ class Post extends Model
         'published_at' => 'datetime',
     ];
 
+
+    public function isPublished() : bool {
+        return $this->published
+                && $this->published_at;
+    }
 }

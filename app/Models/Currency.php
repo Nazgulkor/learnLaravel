@@ -13,19 +13,14 @@ class Currency extends Model
     protected $fillable = [
         'id',
         'name',
-        'price',
-        'active',
-        'sort'
     ];
     protected $hidden = [
         // 'price'
     ];
     protected $casts = [
-        'price' => 'float',
-        'active' => 'boolean',
+
     ];
     protected $dates = [
-        'price' => 'float',
-        'active' => 'boolean',
+
     ];
 }

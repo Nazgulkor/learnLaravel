@@ -13,12 +13,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        $post = (object) [
-            'id' => 32,
-            'title' => 'Lorem ipsum dolor sit amet.',
-            'content' => '<strong>Lorem ipsum dolor sit amet consectetur</strong> adipisicing elit. Vel ad, culpa cum velit minus exercitationem perferendis! Minus odit facilis explicabo?'
-        ];
-        $posts = array_fill(0, 10, $post);
+ 
+        $posts = Post::query()->orderBy('published_at', 'desc')->paginate(12, ['id', 'title', 'published_at']);
         return view('user.posts.index', compact('posts'));
     }
 
@@ -61,8 +57,8 @@ class PostController extends Controller
             [
                 'title' => ['required', 'string', 'max:100'],
                 'content' => ['required', 'string'],
-                'published_at' => ['nullable','string', 'date'],
-                'published' => ['nullable','boolean'],
+                'published_at' => ['nullable', 'string', 'date'],
+                'published' => ['nullable', 'boolean'],
             ]
         );
 

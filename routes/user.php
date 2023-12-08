@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\DonateController;
 
 
 Route::prefix('user')->middleware('auth', 'active')->group(function(){
@@ -13,4 +14,5 @@ Route::prefix('user')->middleware('auth', 'active')->group(function(){
     Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update')->withoutMiddleware('auth');
     Route::delete('/posts/{post}', [PostController::class, 'delete'])->name('posts.delete');
     Route::put('/posts/{post}/like', [PostController::class, 'like'])->name('posts.like');
+    Route::get('/donates', DonateController::class)->name('user.donates')->withoutMiddleware('auth');
 });

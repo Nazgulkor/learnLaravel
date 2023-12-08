@@ -26,7 +26,7 @@ Route::redirect('/home', '/');
 Route::prefix('')->group(function (){
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
     Route::get('/blog/{post}', [BlogController::class, 'show'])->name('blog.show')->middleware('show');
-    Route::put('/blog/{post}/like', [PostController::class, 'like'])->name('blog.like');
+    Route::put('/blog/{post}/like', [BlogController::class, 'like'])->name('blog.like');
 });
 
 

@@ -24,6 +24,9 @@
                     Нет постов
                 </div>
                 @endforelse
+                @if (!empty($posts))
+                    {{ $posts->links()}}
+                @endif
             </div>
         </x-container>
     </section>

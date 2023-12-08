@@ -11,6 +11,7 @@
             <p>
                 {!! $post->content !!}
             </p>
+            {{$date}}
         </x-container>
     </section>
 @endsection
